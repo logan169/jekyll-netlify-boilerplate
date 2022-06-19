@@ -11,7 +11,12 @@
     {% endif %}
   {% endif %}
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+  {% comment %}
   {% if jekyll.environment == 'production' and site.analytics %}
+    {% include analytics.html %}
+  {% endif %}
+  {% endcomment %}
+  {% if site.analytics %}
     {% include analytics.html %}
   {% endif %}
   <script async src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
